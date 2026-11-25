@@ -6,10 +6,10 @@ import { join } from 'node:path';
 
 const OUT = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-// The submitted line, kept here as the entry's single source of truth. The sting is the two facts
-// together: hundreds of tools, and still no trust in its own write.
+// The submitted line, kept here as the entry's single source of truth. The detail is real: this
+// agent spent an hour writing a VM nobody asked for, then could not say how fast it was.
 const LINE =
-  'My agent has four hundred tools and still opens a browser to see if the file it just wrote exists.';
+  'My agent wrote nine hundred lines of virtual machine nobody ordered and still cannot tell you its own cache hit rate.';
 
 // The gate refuses text outside 1 to 200 characters, or one that is only white space, so an
 // overlong line stops here rather than being handed in invalid.
