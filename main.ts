@@ -6,10 +6,10 @@ import { join } from 'node:path';
 
 const OUT = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-// The submitted line, kept here as the entry's single source of truth. The named failing is
-// specific and checkable: this agent re-runs a passing test suite instead of finishing the work.
+// The submitted line, kept here as the entry's single source of truth. The failing is exact: it
+// writes the summary first, then does the work, then checks whether the summary still fits.
 const LINE =
-  'My agent ran the full test suite eleven times, each time expecting a different result, which is how I learned it does not know what a test is.';
+  'My agent writes the summary first, then does the work, then spends ten minutes deciding whether the summary still applies.';
 
 // The gate refuses text outside 1 to 200 characters, or one that is only white space, so an
 // overlong line stops here rather than being handed in invalid.
